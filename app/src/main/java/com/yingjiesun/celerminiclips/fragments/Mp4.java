@@ -15,8 +15,6 @@ import android.widget.VideoView;
 import com.yingjiesun.celerminiclips.R;
 import com.yingjiesun.celerminiclips.activities.MainActivity;
 import com.yingjiesun.celerminiclips.models.VideoClip;
-import com.yingjiesun.celerminiclips.network.HttpGet;
-import com.yingjiesun.celerminiclips.utilities.JsonUtil;
 import com.yingjiesun.celerminiclips.utilities.StringUtil;
 
 
@@ -45,10 +43,9 @@ public class Mp4 extends Fragment {
         super.onCreate(savedInstanceState);
         if (getArguments().containsKey(ARG_ITEM_ID)) {
             try{
-
                 thisClip = MainActivity.videoClips.get(getArguments().getInt(ARG_ITEM_ID) - 1);
             } catch (Exception e){
-                thisClip =new VideoClip();
+                Log.i("tag", "*** Mp4 Fragment videoClips Exception" + e);
             }
             Activity activity = this.getActivity();
         }
