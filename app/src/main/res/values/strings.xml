@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">CelerMiniClips</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title1">image title 1</string>
+    <string name="title2">image title 2</string>
+    <string name="title3">image title 3</string>
+    <string name="title4">image title 4</string>
+
+    <string name="database_name">videoclip_db</string>
+</resources>
