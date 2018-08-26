@@ -1,8 +1,11 @@
 package com.yingjiesun.celerminiclips.models;
 
 import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
+
+import com.google.gson.annotations.SerializedName;
 
 /**
  * Yingjie Sun 8/21/2018
@@ -12,16 +15,34 @@ import android.support.annotation.NonNull;
 public class VideoClip {
 
     @NonNull
-    @PrimaryKey
-    int id;
+    @PrimaryKey(autoGenerate = true)
+    private int uid;
 
+
+    @SerializedName("id")
+    Integer id;
+    @SerializedName("imageUrl")
     String imageUrl;
+    @SerializedName("videoUrl")
     String videoUrl;
-    String image_local = "image_local";
-    String video_local = "video_local";
+    String image_local = "image_local"; //default value, will be updated when saving to internal storage
+    String video_local = "video_local"; //default value, will be updated when saving to internal storage
+ @Ignore
+  public VideoClip( ){}
 
-    public int getId() {
+    public VideoClip( Integer id, String imageUrl, String videoUrl){
+        this.id = id;
+        this.imageUrl = imageUrl;
+        this.videoUrl = videoUrl;
+    }
+
+    @NonNull
+    public Integer getId() {
         return id;
+    }
+
+    public void setId(@NonNull Integer id) {
+        this.id = id;
     }
 
     public String getImageUrl() {
@@ -30,10 +51,6 @@ public class VideoClip {
 
     public String getVideoUrl() {
         return videoUrl;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public void setImageUrl(String imageUrl) {
@@ -59,4 +76,14 @@ public class VideoClip {
     public void setVideo_local(String video_local) {
         this.video_local = video_local;
     }
+
+    @NonNull
+    public int getUid() {
+        return uid;
+    }
+
+    public void setUid(@NonNull int uid) {
+        this.uid = uid;
+    }
+
 }

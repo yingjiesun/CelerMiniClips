@@ -18,12 +18,19 @@ import java.util.List;
 public interface DaoAccess {
     @Insert
     void insertOnlySingleMovie (VideoClip videoClip);
+
     @Insert
     void insertMultipleMovies (List<VideoClip> videoClipsList);
+
     @Query("SELECT * FROM VideoClip WHERE id = :movieId")
     VideoClip fetchOneMoviesbyMovieId (int movieId);
+
+    @Query("SELECT * FROM VideoClip" )
+    List<VideoClip> fetchAllMovies();
+
     @Update
     void updateVideoClip (VideoClip videoClip);
+
     @Delete
     void deleteVideoClip (VideoClip videoClip);
 

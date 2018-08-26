@@ -27,6 +27,8 @@ dependencies {
     implementation 'com.github.moondroid.coverflow:library:1.0'
     implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
     implementation 'android.arch.persistence.room:runtime:1.0.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
     annotationProcessor 'android.arch.persistence.room:compiler:1.0.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
